@@ -3,10 +3,10 @@
 #                                                         :::      ::::::::    #
 #    Makefile                                           :+:      :+:    :+:    #
 #                                                     +:+ +:+         +:+      #
-#    By: sechung <sechung@student.42.fr>            +#+  +:+       +#+         #
+#    By: ahkiler <ahkiler@student.42.fr>            +#+  +:+       +#+         #
 #                                                 +#+#+#+#+#+   +#+            #
 #    Created: 2023/03/23 20:19:22 by sechung           #+#    #+#              #
-#    Updated: 2023/03/23 21:16:46 by sechung          ###   ########.fr        #
+#    Updated: 2023/03/25 13:38:21 by ahkiler          ###   ########.fr        #
 #                                                                              #
 # **************************************************************************** #
 
@@ -18,8 +18,8 @@ CFLAGS		=	-Wall -Wextra -Werror
 LFTDIR		=	libft
 SRCDIR		=	src
 INCDIR		=	./include
-LIBS		=	-lncurses $(LFTDIR)/libft.a -lreadline -L/Users/sechung/.brew/opt/readline/lib
-INCS		=	-I $(LFTDIR) -I $(INCDIR) -I/Users/sechung/.brew/opt/readline/include
+LIBS		=	-lncurses $(LFTDIR)/libft.a -lreadline -L /usr/local/opt/readline/lib
+INCS		=	-I $(LFTDIR) -I $(INCDIR) -I /usr/local/opt/readline/include
 
 SRCS		=	$(SRCDIR)/core/main.c \
 				$(SRCDIR)/core/parse/parse.c \

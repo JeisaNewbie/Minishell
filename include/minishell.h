@@ -3,10 +3,10 @@
 /*                                                        :::      ::::::::   */
 /*   minishell.h                                        :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: jhwang2 <jhwang2@student.42.fr>            +#+  +:+       +#+        */
+/*   By: ahkiler <ahkiler@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/03/23 19:39:58 by sechung           #+#    #+#             */
-/*   Updated: 2023/03/23 20:41:32 by jhwang2          ###   ########.fr       */
+/*   Updated: 2023/03/25 13:55:16 by ahkiler          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -170,6 +170,7 @@ void			fork_error(void);
 
 int				check_isbuiltins(t_process *proc);
 void			m_echo(t_process *proc, t_deque *argv, int flag);
+int				is_option(char *content);
 void			m_cd(t_process *proc, int flag);
 void			m_pwd(t_process *proc, int flag);
 void			m_export(t_process *proc, int flag);

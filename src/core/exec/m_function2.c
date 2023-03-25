@@ -3,10 +3,10 @@
 /*                                                        :::      ::::::::   */
 /*   m_function2.c                                      :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: sechung <sechung@student.42.fr>            +#+  +:+       +#+        */
+/*   By: ahkiler <ahkiler@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/03/23 19:38:16 by sechung           #+#    #+#             */
-/*   Updated: 2023/03/23 20:17:47 by sechung          ###   ########.fr       */
+/*   Updated: 2023/03/25 13:48:19 by ahkiler          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -81,12 +81,14 @@ int	write_str(char *content, int fd)
 		{
 			free(str);
 			close(fd);
+			g_exit_status = 0;
 			return (1);
 		}
 		if (!ft_strcmp (content, str))
 		{
 			free (str);
 			close (fd);
+			g_exit_status = 0;
 			return (0);
 		}
 		write (fd, str, ft_strlen (str));

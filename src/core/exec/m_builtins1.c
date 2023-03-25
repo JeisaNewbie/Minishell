@@ -3,10 +3,10 @@
 /*                                                        :::      ::::::::   */
 /*   m_builtins1.c                                      :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: jhwang2 <jhwang2@student.42.fr>            +#+  +:+       +#+        */
+/*   By: ahkiler <ahkiler@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/03/23 19:36:12 by sechung           #+#    #+#             */
-/*   Updated: 2023/03/23 20:31:56 by jhwang2          ###   ########.fr       */
+/*   Updated: 2023/03/25 13:58:24 by ahkiler          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -41,12 +41,29 @@ t_token	*check_echo_option(t_deque *argv, int *option)
 
 	*option = 0;
 	str = argv->top->next;
-	while (str != NULL && !ft_strcmp ("-n", str->content))
+	while (str != NULL && is_option (str->content))
 	{
 		*option = 1;
 		str = str->next;
 	}
 	return (str);
+}
+
+int	is_option(char *content)
+{
+	int	i;
+
+	i = 0;
+	if (content == NULL)
+		return (0);
+	if (content[i++] != '-')
+		return (0);
+	while (content[i])
+	{
+		if (content[i++] != 'n')
+			return (0);
+	}
+	return (1);
 }
 
 void	m_env(t_process *proc, int flag)

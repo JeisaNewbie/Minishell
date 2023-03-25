@@ -3,10 +3,10 @@
 /*                                                        :::      ::::::::   */
 /*   signal.c                                           :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: jhwang2 <jhwang2@student.42.fr>            +#+  +:+       +#+        */
+/*   By: ahkiler <ahkiler@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/03/23 19:54:07 by sechung           #+#    #+#             */
-/*   Updated: 2023/03/23 20:34:59 by jhwang2          ###   ########.fr       */
+/*   Updated: 2023/03/25 13:44:28 by ahkiler          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -20,6 +20,7 @@ void	new_prompt_handler(int signo)
 		write (1, "\n", 1);
 		rl_on_new_line();
 		rl_redisplay();
+		g_exit_status = 1;
 	}
 }
 
