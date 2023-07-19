@@ -79,9 +79,8 @@ void	check_heredoc(t_process *proc, t_redirects *redirects)
 		{
 			fd = open (proc->heredoc_file[proc->fd_idx],
 					O_WRONLY | O_TRUNC | O_CREAT, 0644);
-			if (write_str(redirects->redirect->file_name->content,
-					fd, proc->envp))
-				return ;
+			write_str(redirects->redirect->file_name->content,
+					fd, proc->envp);
 		}
 		redirects = redirects->redirects;
 	}
